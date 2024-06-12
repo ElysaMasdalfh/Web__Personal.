@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perpustakaan</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styleee.css">
+</head>
+<body>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">PERPUSTAKAAN FHIEMP</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Beranda</a></li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Menu <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="Modul 1 (1).html">Modul 1</a></li>
+            <li><a href="Modul 2 (2).html">Modul 2</a></li>
+            <li><a href="Modul 3.html">Modul 3</a></li>
+            <li><a href="Modul 7 nomor 1.html">Modul 7</a></li>
+            </ul>
+
+          </li>
+          <li><a href="#">Form Keanggotaan</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4">
+        <h2>Selamat datang di Perpustakaan Fhiemp </h2>
+      </div>
+      <div class="col-md-4">
+        <h2>Daftar Koleksi</h2>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Judul Buku</th>
+              <th>Pengarang </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Dasar-Dasar Ilmu Perpustakaan dan Informasi</td>
+              <td>Jonner Hasugian</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Cara Menulis Artikel Agama Islam agar Tayang di Media </td>
+              <td>Abdul Hakim Siregar</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-md-4">
+        <h2>Form Keanggotaan</h2>
+        <form>
+          <div class="form-group">
+            <label for="nama">Nama:</label>
+            <input type="text" class="form-control" id="nama">
+          </div>
+          <div class="form-group">
+            <label for="alamat">Alamat:</label>
+            <input type="text" class="form-control" id="alamat">
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modul 5 no 3</title>
+</head>
+<body>
+
+<h2 id="judulPameran">Pameran Buku</h2>
+
+<div id="deskripsiPameran">
+    <p>Ikuti pameran buku terbaru di perpustakaan Fhiemp</p>
+</div>
+
+<button id="tombolPameran">Lihat Detail Pameran</button>
+
+<h3>Daftar Buku Novel dalam Pameran</h3>
+<ul id="daftarBuku"></ul>
+
+<script>
+    // elemen berdasarkan ID - Javascript
+    var judulPameran = document.getElementById("judulPameran");
+    var deskripsiPameran = document.getElementById("deskripsiPameran");
+    var tombolPameran = document.getElementById("tombolPameran");
+    var daftarBuku = document.getElementById("daftarBuku");
+
+    // HTML DOM event untuk tombol "lihat detail pameran"
+    tombolPameran.addEventListener("click", function() {
+        deskripsiPameran.innerHTML = "<p>Detail Pameran: Pameran buku terbaru akan diselenggarakan pada tanggal 30 april 2024.</p>";
+
+        // daftar buku novel
+        var bukuNovel = [
+            { judul: "Laskar Pelangi", pengarang: "Andrea Hirata" },
+            { judul: "Tetang Kamu", pengarang: "Tere Liye" },
+            { judul: "Ronggeng Dukuh Paruk", pengarang: "ahmad Tohara" },
+            { judul: "Bumi Manusia", pengarang: "Pramoedya Ananta Toer" },
+            { judul: "Ayat-Ayat Cinta", pengarang: "Habiburrahman El Shirazy" },
+            { judul: "Supernova: Ksatria, Puteri, dan Bintang jatuh", pengarang: "Dee Lestari" },
+            { judul: "Pulang", pengarang: "Tere Liye" },
+            { judul: "Pasung Jiwa", pengarang: "Okky Madasari" },
+            { judul: "Maryam", pengarang: "Okky Madasari" },
+            { judul: "Lelaki Harimau", pengarang: "Eka Kurniawan" },
+            { judul: "Cinta di Dalam Gelas", pengarang: "Andrea Hirata" },
+            { judul: "Perahu Kertas", pengarang: "Dewi Lestari" },
+            { judul: "Negeri 5 Menara", pengarang: "Ahmad Fuadi" },
+            { judul: "Sitti Nurbaya", pengarang: "Marah rusli" },
+            { judul: "Ayah", pengarang: "Andrea Hirata" }
+        ];
+
+       
+        bukuNovel.forEach(function(buku) {
+            var itemBuku = document.createElement("li");
+            itemBuku.textContent = buku.judul + " - " + buku.pengarang;
+            daftarBuku.appendChild(itemBuku);
+        });
+    });
+
+    </script>
+  </body>
+  </html>
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  
+ 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Perpustakaan</title>
+<style>
+    /* Styles untuk pameran buku */
+    .book-exhibition {
+        border: 2px solid #ccc;
+        padding: 10px;
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+
+
+
+<p>Masukkan jumlah buku yang ingin dipamerkan:</p>
+<input type="number" id="jumlahBuku">
+<button onclick="tampilkanPameran()">Tampilkan Pameran</button>
+
+<div id="pameranBuku" class="book-exhibition"></div>
+
+<script>
+// JavaScript code
+function tampilkanPameran() {
+    var jumlahBuku = parseInt(document.getElementById("jumlahBuku").value);
+    var pameran = document.getElementById("pameranBuku");
+
+    // Bersihkan pameran sebelum menambahkan buku baru
+    pameran.innerHTML = "";
+
+    if (jumlahBuku <= 0 || isNaN(jumlahBuku)) {
+        pameran.innerHTML = "Masukkan jumlah buku yang valid!";
+    } else {
+        pameran.innerHTML = "<h2>Pameran Buku:</h2>";
+
+        // Buat daftar buku dengan perulangan
+        pameran.innerHTML += "<ul>";
+        for (var i = 1; i <= jumlahBuku; i++) {
+            pameran.innerHTML += "<li>Buku " + i + "</li>";
+        }
+        pameran.innerHTML += "</ul>";
+    }
+}
+</script>
+
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kalkulator Sederhana</title>
+    <script>
+        function hitung() {
+            var bil1 = parseFloat(document.getElementById("bil1").value);
+            var bil2 = parseFloat(document.getElementById("bil2").value);
+            var operasi = document.getElementById("operasi").value;
+            var hasil;
+
+            if (isNaN(bil1) || isNaN(bil2)) {
+                hasil = "Mohon masukkan bilangan yang valid";
+            } else {
+                switch (operasi) {
+                    case "tambah":
+                        hasil = bil1 + bil2;
+                        break;
+                    case "kurang":
+                        hasil = bil1 - bil2;
+                        break;
+                    case "kali":
+                        hasil = bil1 * bil2;
+                        break;
+                    case "bagi":
+                        if (bil2 === 0) {
+                            hasil = "Pembagian dengan nol tidak diperbolehkan";
+                        } else {
+                            hasil = bil1 / bil2;
+                        }
+                        break;
+                    default:
+                        hasil = "Operasi tidak valid";
+                }
+            }
+
+            document.getElementById("hasil").innerHTML = "Hasil: " + hasil;
+        }
+    </script>
+</head>
+<body>
+    <h2>Kalkulator Sederhana</h2>
+    <form onsubmit="event.preventDefault(); hitung();">
+        <label for="bil1">Bilangan 1:</label>
+        <input type="text" id="bil1" name="bil1"><br><br>
+
+        <label for="bil2">Bilangan 2:</label>
+        <input type="text" id="bil2" name="bil2"><br><br>
+
+        <label for="operasi">Operasi:</label>
+        <select id="operasi" name="operasi">
+            <option value="tambah">Tambah</option>
+            <option value="kurang">Kurang</option>
+            <option value="kali">Kali</option>
+            <option value="bagi">Bagi</option>
+        </select><br><br>
+
+        <input type="submit" value="Hitung">
+    </form>
+    <p id="hasil">Hasil: </p>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manajemen Database</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .control {
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        let database = [
+            { id: 1, name: " Aisyah Siregar", age: 19, email: "aisyahsiregar7505@gmail.com" },
+            { id: 2, name: "Iffa Sakinah", age: 21, email: "iffasakinah715@gmail.com" },
+            { id: 3, name: "Indah Harahap", age: 22, email: "safitriindah576@gmail.com" },
+            { id: 4, name: "Afria Nadia", age: 23, email: "afrianadia1441@gmail.com" }
+        ];
+
+        function displayDatabase() {
+            let table = document.getElementById("databaseTable");
+            table.innerHTML = "";
+            database.forEach((row, index) => {
+                let tr = table.insertRow();
+                tr.insertCell(0).innerHTML = row.id;
+                tr.insertCell(1).innerHTML = row.name;
+                tr.insertCell(2).innerHTML = row.age;
+                tr.insertCell(3).innerHTML = row.email;
+                let actions = tr.insertCell(4);
+                actions.innerHTML = `<button onclick="editRow(${index})">Edit</button>
+                                     <button onclick="deleteRow(${index})">Delete</button>`;
+            });
+        }
+
+        function addRow() {
+            let name = document.getElementById("name").value;
+            let age = document.getElementById("age").value;
+            let email = document.getElementById("email").value;
+            let id = database.length ? database[database.length - 1].id + 1 : 1;
+            database.push({ id, name, age, email });
+            displayDatabase();
+        }
+
+        function editRow(index) {
+            let row = database[index];
+            document.getElementById("name").value = row.name;
+            document.getElementById("age").value = row.age;
+            document.getElementById("email").value = row.email;
+            document.getElementById("index").value = index;
+            document.getElementById("submit").value = "Update";
+        }
+
+        function updateRow(index) {
+            let name = document.getElementById("name").value;
+            let age = document.getElementById("age").value;
+            let email = document.getElementById("email").value;
+            database[index] = { ...database[index], name, age, email };
+            displayDatabase();
+            document.getElementById("submit").value = "Add";
+        }
+
+        function deleteRow(index) {
+            database.splice(index, 1);
+            displayDatabase();
+        }
+
+        function handleSubmit() {
+            let index = document.getElementById("index").value;
+            if (index) {
+                updateRow(index);
+            } else {
+                addRow();
+            }
+            document.getElementById("index").value = "";
+            document.getElementById("name").value = "";
+            document.getElementById("age").value = "";
+            document.getElementById("email").value = "";
+        }
+
+        window.onload = function() {
+            displayDatabase();
+        };
+    </script>
+</head>
+<body>
+    <h2>Manajemen Database</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nama</th>
+                <th>Usia</th>
+                <th>Email</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody id="databaseTable">
+            <!-- Data akan diisi oleh JavaScript -->
+        </tbody>
+    </table>
+
+    <div class="control">
+        <h3>Tambah/Ubah Data</h3>
+        <form onsubmit="event.preventDefault(); handleSubmit();">
+            <input type="hidden" id="index">
+            <label for="name">Nama:</label>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="age">Usia:</label>
+            <input type="number" id="age" name="age" required><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+            <input type="submit" id="submit" value="Add">
+        </form>
+    </div>
+</body>
+</html>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--Contact-->
+    <section id="contact">
+        <div class="contact main-container">
+            <div class="contact-left">
+                <form class="contact-form" action="https://formspree.io/f/mleqallq" method="POST">
+                    <div>
+                        <input type="text" placeholder="Name" name="name">
+                        </div>
+                        <div>
+                            <input type="email" placeholder="Email" name="email">
+                            </div>
+                            <div>
+                                <textarea
+                                name="message"
+                                id="message"
+                                placeholder="Message"
+                                cols="30"
+                                row="10">
+                            </textarea>
+                        </div>    
+                        <div>
+                            <button class="btn-submit">Send Message</button>
+                        </div>
+                </form>
+            </div>
+</body>
+</html>
